@@ -10,20 +10,24 @@ html {
 
 body {
   background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 .container {
   max-width: 600px;
-  margin: 0 auto;
+  width: 100%;
+  margin: 20px auto;
   background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 51%, #fad0c4 100%);
-  min-height: 100vh;
   padding: 30px;
   border-radius: 20px;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
   background-image: url("background.jpg");
   background-position: center;
   background-size: cover;
-  background-attachment: fixed;
+  background-blend-mode: overlay; /* Blend gradient and image for better effect */
   overflow: hidden;
   will-change: transform;
 }
@@ -72,66 +76,33 @@ body {
 .link-button {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   text-decoration: none;
+  color: #fff;
   font-size: 1.3em;
+  background-color: rgba(51, 51, 51, 0.8); /* Slightly transparent for better blend */
+  border: 2px solid rgba(204, 204, 204, 0.5);
   border-radius: 50px;
   margin: 12px 0;
-  padding: 10px 20px;
+  padding: 16px 35px;
   width: 100%;
   max-width: 450px;
   transition: all 0.4s ease;
   font-weight: 700;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   will-change: transform;
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-.link-button .fa-stack {
+.link-button i {
   margin-right: 12px;
-}
-
-.link-button .fa-stack .fa-circle {
+  font-size: 1.6em;
   color: #fff;
-}
-
-.link-button .fa-stack .fa-stack-1x {
-  color: #2196f3;
-}
-
-.dark-button {
-  background-color: #333;
-}
-
-.dark-button .fa-stack .fa-circle {
-  color: #333;
-}
-
-.dark-button .fa-stack .fa-stack-1x {
-  color: #fff;
-}
-
-.blue-button {
-  background-color: #2196f3;
-}
-
-.blue-button:hover {
-  background-color: #1e88e5;
-}
-
-.dark-button:hover {
-  background-color: #444;
 }
 
 .link-button:hover {
+  background-color: rgba(68, 68, 68, 0.9);
   transform: translateY(-4px) scale(1.02);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.link-button:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
 }
 
 .social-icons {
@@ -170,9 +141,9 @@ body {
 
 /* Smoother animations */
 .animate__animated {
-  --animate-duration: 2s;
-  --animate-delay: 0.8s;
-  animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --animate-duration: 1.5s; /* Reduced duration for less stiffness */
+  --animate-delay: 0.5s; /* Reduced delay */
+  animation-timing-function: ease-in-out;
 }
 
 @media (max-width: 500px) {
